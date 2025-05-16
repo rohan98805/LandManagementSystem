@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Confirm Delete</h2>
+<p>Are you sure you want to delete this {{ title }}?</p>
+<form method="post">{% csrf_token %}
+  <button type="submit">Yes, Delete</button>
+  <a href="{% url request.resolver_match.view_name|slice:':-7' %}_list %}">Cancel</a>
+</form>
+{% endblock %}

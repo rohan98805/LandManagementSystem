@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4" style="max-width: 700px;">
+  <div class="card shadow-sm p-4 rounded">
+    <h2 class="mb-3">Message Details</h2>
+
+    <p><strong>From:</strong> <span class="text-primary">{{ msg.sender.username }}</span></p>
+    <p><strong>Subject:</strong> {{ msg.subject|default:"No Subject" }}</p>
+    <p><strong>Sent:</strong> {{ msg.timestamp|date:"M d, Y H:i" }}</p>
+    <hr>
+    <p class="mb-4">{{ msg.body|linebreaks }}</p>
+
+    {% if msg.attachment %}
+      <hr>
+      <p><strong>Attachment:</strong> <a href="{{ msg.attachment.url }}" download class="btn btn-sm btn-outline-primary">Download</a></p>
+    {% endif %}
+
+    <a href="{% url 'inbox' %}" class="btn btn-secondary mt-3">Back to Inbox</a>
+  </div>
+</div>
+{% endblock %}

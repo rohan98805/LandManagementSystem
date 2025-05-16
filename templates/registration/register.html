@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Register | Land Management{% endblock %}
+
+{% block content %}
+<div class="container mt-5" style="max-width: 480px;">
+    <div class="card shadow-sm border-0 rounded-3 p-4">
+        <h3 class="mb-4 text-center fw-bold text-primary">Create an Account</h3>
+
+        {% if messages %}
+            <ul class="list-unstyled mb-3">
+                {% for message in messages %}
+                    <li class="alert {% if message.tags == 'error' %}alert-danger{% else %}alert-success{% endif %} py-2 px-3">
+                        {{ message }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <form id="registerForm" method="post" enctype="multipart/form-data" novalidate>
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <input type="hidden" id="tx_hash" name="tx_hash">
+
+            <button type="submit" class="btn btn-primary w-100 fw-bold py-2 mt-2">
+                <i class="fas fa-user-plus me-2"></i> Register
+            </button>
+        </form>
+
+        <p class="mt-4 text-center text-muted small">
+            Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login here</a>
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    async function sendTransaction() {
+        const sender = document.getElementById('id_ganache_address').value.trim();
+        const systemWallet = '0x0872d75d19F50b43967D165D60Db98571AE91373';
+
+        if (!sender || !/^0x[a-fA-F0-9]{40}$/.test(sender)) {
+            alert("Please enter a valid Ganache address.");
+            throw new Error("Invalid Ganache address");
+        }
+
+        const tx = {
+            from: sender,
+            to: systemWallet,
+            value: '0x38D7EA4C68000' // 0.001 ETH in wei
+        };
+
+        try {
+            const txHash = await ethereum.request({
+                method: 'eth_sendTransaction',
+                params: [tx],
+            });
+
+            return { txHash };
+        } catch (err) {
+            console.error('MetaMask transaction failed:', err);
+            throw err;
+        }
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        try {
+            const { txHash } = await sendTransaction();
+            document.getElementById('tx_hash').value = txHash;
+            e.target.submit();
+        } catch (err) {
+            alert('MetaMask transaction failed: ' + err.message);
+        }
+    });
+</script>
+{% endblock %}

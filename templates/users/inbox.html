@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container mt-4" style="max-width: 700px;">
+  <h2 class="mb-4">Inbox</h2>
+
+  {% if messages %}
+    <ul class="list-group">
+      {% for message in messages %}
+        <li class="list-group-item {% if not message.is_read %}fw-bold{% endif %}">
+          <a href="{% url 'view_message' message.id %}" class="d-flex justify-content-between align-items-center text-decoration-none text-body">
+            <div>
+              From: {{ message.sender.username }} - {{ message.subject|default:"No Subject" }}
+            </div>
+            <small class="text-muted">{{ message.timestamp|date:"M d, Y H:i" }}</small>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No messages.</p>
+  {% endif %}
+
+  <a href="{% url 'send_message' %}" class="btn btn-success mt-3">Compose New Message</a>
+</div>
+{% endblock %}

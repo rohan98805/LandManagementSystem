@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow p-4">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                {% if user.profile_photo %}
+                    <img src="{{ user.profile_photo.url }}" class="img-thumbnail rounded-circle mb-3" width="150" alt="Profile Photo">
+                {% else %}
+                    <img src="{% static 'default_profile.jpeg' %}" class="img-thumbnail rounded-circle mb-3" width="150" alt="No Photo">
+                {% endif %}
+            </div>
+            <div class="col-md-9">
+                <h3><i class="fas fa-user-circle"></i> Profile</h3>
+                <hr>
+                <p><strong><i class="fas fa-user"></i> Username:</strong> {{ user.username }}</p>
+                <p><strong><i class="fas fa-envelope"></i> Email:</strong> {{ user.email }}</p>
+                <p><strong><i class="fas fa-wallet"></i> Ganache Address:</strong> {{ user.ganache_address }}</p>
+                <p><strong><i class="fas fa-user-tag"></i> Buyer:</strong> {{ user.is_buyer|yesno:"Yes,No" }}</p>
+                <p><strong><i class="fas fa-user-check"></i> Seller:</strong> {{ user.is_seller|yesno:"Yes,No" }}</p>
+
+                <!-- Display Aadhar and PAN cards -->
+                <div class="row mt-4">
+                    <div class="col-md-6 text-center">
+                        <h5><i class="fas fa-id-card"></i> Aadhar Card</h5>
+                        {% if user.adhar_card %}
+                            <img src="{{ user.adhar_card.url }}" class="img-fluid rounded border" alt="Aadhar Card">
+                        {% else %}
+                            <p class="text-muted">No Aadhar card uploaded.</p>
+                        {% endif %}
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <h5><i class="fas fa-id-card-alt"></i> PAN Card</h5>
+                        {% if user.pan_card %}
+                            <img src="{{ user.pan_card.url }}" class="img-fluid rounded border" alt="PAN Card">
+                        {% else %}
+                            <p class="text-muted">No PAN card uploaded.</p>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="mt-4">
+                    <a href="{% url 'edit_profile' %}" class="btn btn-primary me-2">
+                        <i class="fas fa-edit"></i> Edit Profile
+                    </a>
+                    <a href="{% url 'change_password' %}" class="btn btn-warning">
+                        <i class="fas fa-key"></i> Change Password
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

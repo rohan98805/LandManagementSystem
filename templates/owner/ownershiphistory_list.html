@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h3><i class="fas fa-history"></i> Ownership History</h3>
+    <a href="{% url 'ownershiphistory_create' %}" class="btn btn-primary my-3">
+        <i class="fas fa-plus-circle"></i> Add History
+    </a>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Land</th>
+                    <th scope="col">Owner Name</th>
+                    <th scope="col">Order</th>
+                    <th scope="col">New Owner</th>
+                    <th scope="col" class="text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in history %}
+                <tr>
+                    <td>{{ record.land }}</td>
+                    <td>{{ record.owner_name }}</td>
+                    <td>{{ record.ownership_order }}</td>
+                    <td>{{ record.new_owner }}</td>
+                    <td class="text-center">
+                        <a href="{% url 'ownershiphistory_update' record.id %}" class="btn btn-sm btn-warning" aria-label="Edit ownership history {{ record.id }}">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                        <a href="{% url 'ownershiphistory_delete' record.id %}" class="btn btn-sm btn-danger" aria-label="Delete ownership history {{ record.id }}">
+                            <i class="fas fa-trash-alt"></i>
+                        </a>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="5" class="text-center">No records found.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

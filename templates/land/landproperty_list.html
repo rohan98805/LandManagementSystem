@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>All Properties</h2>
+<a href="{% url 'landproperty_create' %}">Add New</a>
+<table>
+  <tr><th>Place</th><th>Location</th><th>Price</th><th>Actions</th></tr>
+  {% for property in properties %}
+  <tr>
+    <td>{{ property.place }}</td>
+    <td>{{ property.location }}</td>
+    <td>{{ property.expected_price }}</td>
+    <td>
+      <a href="{% url 'landproperty_update' property.pk %}">Edit</a> |
+      <a href="{% url 'landproperty_delete' property.pk %}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

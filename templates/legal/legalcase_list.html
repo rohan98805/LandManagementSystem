@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container mt-4">
+    <h3><i class="fas fa-balance-scale"></i> Legal Cases</h3>
+    <a href="{% url 'legalcase_create' %}" class="btn btn-primary my-3">
+        <i class="fas fa-plus-circle"></i> Add Case
+    </a>
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Case Number</th>
+                <th>Land</th>
+                <th>Document</th>
+                <th>Remarks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for case in cases %}
+            <tr>
+                <td>{{ case.case_number }}</td>
+                <td>{{ case.land }}</td>
+                <td><a href="{{ case.document.url }}" target="_blank">View</a></td>
+                <td>{{ case.remarks }}</td>
+                <td>
+                    <a href="{% url 'legalcase_update' case.id %}" class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></a>
+                    <a href="{% url 'legalcase_delete' case.id %}" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="5">No cases found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
