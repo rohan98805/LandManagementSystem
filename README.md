@@ -71,3 +71,9 @@ A Django-based full-stack web application to manage land records, legal history,
    ```bash
    git clone https://github.com/rohan98805/landmanagementsystem.git
    cd landmanagementsystem
+
+## 🌐 Live Demo
+
+You can access the deployed Land Management System at:
+
+[http://16.171.144.7/](http://16.171.144.7/)
