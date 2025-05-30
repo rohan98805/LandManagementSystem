@@ -60,9 +60,8 @@ A Django-based full-stack web application to manage land records, legal history,
 
 - **Backend**: Python, Django, Django REST Framework
 - **Frontend**: Bootstrap 5, JavaScript, Font Awesome
-- **Blockchain**: Ganache (Ethereum test blockchain), MetaMask wallet
 - **Database**: SQLite 
-- **Authentication**: MetaMask wallet login + Django session
+- **Authentication**: login + Django session
 
 ---
 
