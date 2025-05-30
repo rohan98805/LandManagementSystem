@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Land Management System Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .content-section {
+      display: none;
+    }
+    .content-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Land System Portfolio</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('home')">Home</a></li> -->
+        <!-- <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('about')">About</a></li> -->
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('problem')">Problem Understanding</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('techstack')">Tech Stack</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('ci')">CI/CD</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('ec2')">EC2 Setup</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('docker')">Docker</a></li>
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('jenkins')">Jenkins</a></li>
+
+        <li class="nav-item"><a class="nav-link" href="#" onclick="showSection('steps')">Working Steps</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Content Sections -->
+<div class="container my-4">
+    <div class="section">
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Land Management System</h2>
+
+        <div class="text-center mb-4">
+        <h5>Dr. Sheshgiri KLE Tech Engineering College</h5>
+        <p>Department of Computer Science</p>
+        <p><strong>Project Guide:</strong> Dr. Priyanka Pagavade</p>
+        </div>
+
+        <h4 class="text-center mb-4">Team Members</h4>
+        <div class="row justify-content-center">
+        <!-- Team Member 1 -->
+        <div class="col-md-3 text-center">
+            <!-- <img src="images/rohan.jpg" class="img-fluid rounded-circle mb-2" alt="Rohan Mushannavar Photo"> -->
+            <p><strong>Rohan Umesh Mushannavar</strong><br>
+            SRN: 02FE23BCS402<br>
+            Roll No: 35
+            </p>
+        </div>
+
+        <!-- Team Member 2 -->
+        <div class="col-md-3 text-center">
+            <!-- <img src="images/shreenidhi.jpg" class="img-fluid rounded-circle mb-2" alt="Shreenidhi Yalwar Photo"> -->
+            <p><strong>Shreenidhi Yalwar</strong><br>
+            SRN: 02FE23BCS405<br>
+            Roll No: 38
+            </p>
+        </div>
+
+        <!-- Team Member 3 -->
+        <div class="col-md-3 text-center">
+            <!-- <img src="images/abhishek.jpg" class="img-fluid rounded-circle mb-2" alt="Abhishek Kamble Photo"> -->
+            <p><strong>Abhishek Kamble</strong><br>
+            SRN: 02FE23BCS423<br>
+            Roll No: 56
+            </p>
+        </div>
+
+        <!-- Team Member 4 -->
+        <div class="col-md-3 text-center">
+            <!-- <img src="images/sahil.jpg" class="img-fluid rounded-circle mb-2" alt="Sahil Kulkarni Photo"> -->
+            <p><strong>Sahil Kulkarni</strong><br>
+            SRN: 02FE23BCS407<br>
+            Roll No: 40
+            </p>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+    <div id="about" class="content-section">
+    <h2>About</h2>
+    <p>This system streamlines property verification and transactions...</p>
+    </div>
+
+    <div id="problem" class="content-section">
+    <h2>Problem Understanding & GitHub Setup</h2>
+
+    <h3>🌍 Project Overview</h3>
+    <p>
+        The Land Management System is a comprehensive web application designed to streamline the processes involved in land transactions. It facilitates interactions between sellers, buyers, and administrators, ensuring secure and efficient management of land properties.
+    </p>
+    <img src="asserts/img/home.png" class="img-fluid rounded shadow-sm mb-4" alt="Project Dashboard Screenshot">
+
+    <h3>🧱 Key Features</h3>
+    <ul>
+        <li><strong>User Roles</strong>: Sellers, Buyers, and Administrators with distinct permissions and functionalities.</li>
+        <li><strong>User Verification</strong>: Sellers upload identity proofs (Aadhaar, PAN); admins review and approve.</li>
+        <li><strong>Property Listings</strong>: Sellers list verified properties with full metadata and media attachments.</li>
+        <li><strong>Messaging System</strong>: Integrated communication between seller-admin and buyer-seller for smooth transaction negotiation.</li>
+        <li><strong>Price Prediction Model</strong>: Buyers get predicted prices to compare with seller listings.</li>
+        <li><strong>Legal and Ownership Records</strong>: Transparency ensured via history tracking and legal case linking.</li>
+    </ul>
+    <img src="asserts/img/properties.png" class="img-fluid rounded shadow-sm mb-4" alt="Features Overview Screenshot">
+
+    <h3>🧩 Problem Statement</h3>
+    <p>
+        Traditional methods of land transactions are often plagued by inefficiencies, lack of transparency, and potential fraud. Buyers face challenges in verifying property authenticity, while sellers struggle with reaching genuine buyers. Administrators, on the other hand, find it cumbersome to manage and verify numerous listings manually.
+    </p>
+    <img src="asserts/img/faq.png" class="img-fluid rounded shadow-sm mb-4" alt="Problem Context Screenshot">
+
+    <h3>🎯 Objectives</h3>
+    <ul>
+        <li>Automate and streamline the seller and land verification process.</li>
+        <li>Improve transparency in land records and legal ownership.</li>
+        <li>Enable secure and traceable communication among stakeholders.</li>
+        <li>Assist buyers with predictive pricing to make data-driven decisions.</li>
+        <li>Ensure platform security through proper authentication and access control.</li>
+    </ul>
+    <img src="asserts/img/buyerProfile.png" class="img-fluid rounded shadow-sm mb-4" alt="Objectives Screenshot">
+
+    <h3>🛠️ Technical Stack</h3>
+    <ul>
+        <li><strong>Frontend</strong>: HTML, CSS, Bootstrap for responsive UI.</li>
+        <li><strong>Backend</strong>: Django (Python) for server-side logic and API handling.</li>
+        <li><strong>Database</strong>: PostgreSQL or MySQL for structured data storage.</li>
+        <li><strong>Machine Learning</strong>: Price prediction using scikit-learn or TensorFlow.</li>
+        <li><strong>Hosting</strong>: AWS EC2 for cloud deployment with CI/CD pipeline integration.</li>
+    </ul>
+    <!-- <img src="asserts/img/tech_stack.png" class="img-fluid rounded shadow-sm mb-4" alt="Technology Stack Screenshot"> -->
+    </div>
+
+    <div id="techstack" class="content-section">
+    <h2>Tech Stack Finalization</h2>
+
+    <!-- Backend: Django -->
+    <h4>Django (Backend Framework)</h4>
+    <p>Django is a high-level Python web framework that encourages rapid development and clean, pragmatic design. It handles authentication, routing, models, forms, and admin interfaces efficiently.</p>
+    <img src="asserts/img/code.png" class="img-fluid rounded border shadow-sm mb-4" alt="Django Admin Screenshot" />
+
+    <!-- Database: SQLite/MySQL -->
+    <h4>SQLite / MySQL (Database)</h4>
+    <p>SQLite is used during development for its simplicity, while MySQL is deployed in production for scalability and reliability in storing user data, land records, and messages.</p>
+    <img src="asserts/img/db.png" class="img-fluid rounded border shadow-sm mb-4" alt="MySQL Workbench Screenshot" />
+    <!-- Version Control: GitHub -->
+    <h4>GitHub (Version Control)</h4>
+    <p>GitHub is used for managing source code, tracking issues, collaborating with other developers, and integrating with CI/CD pipelines.</p>
+    <img src="asserts/img/clone.png" class="img-fluid rounded border shadow-sm mb-4" alt="GitHub Repository Screenshot" />
+
+    <img src="asserts/img/git.png" class="img-fluid rounded border shadow-sm mb-4" alt="GitHub Repository Screenshot" />
+
+    <img src="asserts/img/i7.png" class="img-fluid rounded border shadow-sm mb-4" alt="GitHub Repository Screenshot" />
+
+    <img src="asserts/img/i8.png" class="img-fluid rounded border shadow-sm mb-4" alt="GitHub Repository Screenshot" />
+
+    <img src="asserts/img/i9.png" class="img-fluid rounded border shadow-sm mb-4" alt="GitHub Repository Screenshot" />
+
+    <!-- Deployment: AWS EC2 -->
+    <h4>AWS EC2 (Cloud Hosting)</h4>
+    <p>The project is deployed on an AWS EC2 instance using NGINX and Gunicorn. EC2 provides scalable compute capacity in the cloud.</p>
+    <img src="asserts/img/aws.jpg" class="img-fluid rounded border shadow-sm mb-4" alt="AWS EC2 Instance Screenshot" />
+
+    <!-- Containerization: Docker -->
+    <h4>Docker (Containerization)</h4>
+    <p>Docker is used to package the application and its dependencies into containers, ensuring consistency across environments and simplifying deployment.</p>
+    <img src="asserts/img/docker.png" class="img-fluid rounded border shadow-sm mb-4" alt="Docker Dashboard Screenshot" />
+
+    <!-- Automation: Jenkins -->
+    <h4>Jenkins (CI/CD Automation)</h4>
+    <p>Jenkins automates testing and deployment using pipelines triggered by GitHub events, ensuring code quality and continuous delivery.</p>
+    <img src="asserts/img/jenkins.png" class="img-fluid rounded border shadow-sm mb-4" alt="Jenkins CI/CD Pipeline Screenshot" />
+    </div>
+
+    <div id="ci" class="content-section">
+    <h2>CI/CD Pipeline Design</h2>
+    <p>
+        To streamline our development workflow, we implemented a CI/CD (Continuous Integration and Continuous Deployment) pipeline using <strong>GitHub Actions</strong>. 
+        This allows for automated testing, building, and deployment with every code push, ensuring code quality and faster delivery.
+    </p>
+    <ul>
+        <li><strong>Continuous Integration:</strong> Automatically runs unit tests on every pull request.</li>
+        <li><strong>Build Automation:</strong> Uses GitHub Actions workflows to build the Django project and check for syntax errors.</li>
+        <li><strong>Deployment:</strong> Pushes successful builds to the production server using SSH and Docker.</li>
+    </ul>
+    <img src="asserts/img/pipeline.png" alt="CI/CD Pipeline Diagram" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
+    </div>
+
+    <div id="ec2" class="content-section">
+    <h2>EC2 Setup & GitHub Integration</h2>
+    <p>
+        We deployed our Django-based application on an <strong>Amazon EC2 instance</strong> running <strong>Ubuntu 22.04</strong>. 
+        The setup ensures a scalable, reliable, and secure environment for hosting the web application.
+    </p>
+    <ul>
+        <li><strong>EC2 Configuration:</strong> Provisioned a t2.micro instance with Ubuntu, installed essential packages, and configured SSH access using a PEM key.</li>
+        <li><strong>NGINX:</strong> Used as a reverse proxy server to handle HTTP requests and serve static files.</li>
+        <li><strong>Gunicorn:</strong> Acts as the WSGI HTTP server running the Django application behind NGINX.</li>
+        <li><strong>Firewall & Security:</strong> Configured UFW and AWS Security Groups to allow only required ports (SSH, HTTP, HTTPS).</li>
+        <li><strong>GitHub Webhooks:</strong> Set up webhooks to trigger automatic deployment on `git push` to the main branch. A webhook listener script pulls the latest code and restarts Gunicorn.</li>
+    </ul>
+    <p>
+        This setup automates the deployment process and ensures minimal downtime when updates are pushed.
+    </p>
+    <img src="asserts/img/e1.png" alt="EC2 GitHub Deployment Flow" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
+
+    <img src="asserts/img/e2.png" alt="EC2 GitHub Deployment Flow" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
+
+    <img src="asserts/img/e3.png" alt="EC2 GitHub Deployment Flow" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
+
+    <img src="asserts/img/ec.png" alt="EC2 GitHub Deployment Flow" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
+
+    <img src="asserts/img/ec2.png" alt="EC2 GitHub Deployment Flow" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
+
+
+    <img src="asserts/img/i6.png" alt="EC2 GitHub Deployment Flow" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
+
+
+    <img src="asserts/img/i11.png" alt="EC2 GitHub Deployment Flow" style="max-width:100%; height:auto; border-radius:8px; margin-top:15px;">
+    </div>
+
+    <div id="docker" class="content-section">
+    <h2>Docker</h2>
+    <p>
+        Docker is a platform that enables developers to package applications and their dependencies into containers, ensuring consistency across multiple environments. In our project, Docker simplifies deployment and scaling by encapsulating the application in isolated environments.
+    </p>
+
+    <h3>🔧 Dockerfile</h3>
+    <p>
+        The <code>Dockerfile</code> defines the steps to build a Docker image for our application. It specifies the base image, copies application files, installs dependencies, and sets up the command to run the application.
+    </p>
+    <img src="asserts/img/docker.png" class="img-fluid rounded shadow-sm mb-4" alt="Dockerfile Example">
+
+    <h3>📦 Building the Docker Image</h3>
+    <p>
+        We build the Docker image using the following command:
+    </p>
+    <pre><code>docker build -t land-management-system .</code></pre>
+    <img src="asserts/img/d1.png" class="img-fluid rounded shadow-sm mb-4" alt="Docker Build Process">
+
+    <h3>🚀 Running the Docker Container</h3>
+    <p>
+        Once the image is built, we run the container using:
+    </p>
+    <pre><code>docker run -d -p 8000:8000 land-management-system</code></pre>
+    <img src="asserts/img/d2.png" class="img-fluid rounded shadow-sm mb-4" alt="Docker Run Command">
+
+    <h3>🗂️ Docker Compose</h3>
+    <p>
+        Docker Compose allows us to define and manage multi-container Docker applications. We use it to run the application alongside services like the database.
+    </p>
+    <img src="asserts/img/d3.png" class="img-fluid rounded shadow-sm mb-4" alt="Docker Compose Configuration">
+
+    <img src="asserts/img/d4.png" class="img-fluid rounded shadow-sm mb-4" alt="Docker Build">
+
+    </div>
+
+    <div id="jenkins" class="content-section">
+        <h2>Jenkins</h2>
+        <p>
+            Jenkins is an open-source automation server that facilitates continuous integration and continuous delivery (CI/CD). It automates the building, testing, and deployment processes, enhancing the efficiency and reliability of our development workflow.
+        </p>
+        <img src="asserts/img/jenkins.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+        <h3>⚙️ Jenkins Pipeline</h3>
+        <p>
+            We utilize Jenkins Pipelines to define our build and deployment processes as code. This approach allows for version control and easy maintenance of the CI/CD workflow.
+        </p>
+        <img src="asserts/img/j1.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+        <h3>🔄 Integration with GitHub</h3>
+        <p>
+            Jenkins integrates with GitHub to trigger builds automatically upon code commits. Webhooks notify Jenkins of changes, initiating the pipeline process.
+        </p>
+        <img src="asserts/img/j2.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+        <h3>🐳 Building Docker Images with Jenkins</h3>
+        <p>
+            Jenkins automates the building of Docker images using the defined <code>Dockerfile</code>. It ensures that the latest code changes are encapsulated in the Docker image.
+        </p>
+        <img src="asserts/img/j3.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+        <img src="asserts/img/j4.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+        <h3>🚢 Deploying to AWS EC2</h3>
+        <p>
+            After building the Docker image, Jenkins deploys the container to an AWS EC2 instance. This automated deployment ensures that the application is always up-to-date with the latest changes.
+        </p>
+            <p>Access Jenkins Web UI at: http://16.171.144.7:8080</p>
+        <img src="asserts/img/deployed.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+    </div>
+
+    <div id="steps" class="content-section">
+        <h2>Working Steps</h2>
+
+        <img src="asserts/img/i1.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+        <img src="asserts/img/i2.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+        <img src="asserts/img/i3.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+        <img src="asserts/img/i4.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+        <img src="asserts/img/i5.png" class="img-fluid rounded shadow-sm mb-4" alt="Jenkins Pipeline Overview">
+
+    </div>
+
+<!-- JS -->
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
